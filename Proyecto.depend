@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1663725217 source:c:\users\jota5\desktop\proyecto\proyecto\main.cpp
+	<iostream>
+	<math.h>
+
+1663677162 source:c:\users\jota5\desktop\proyecto\proyecto\src\database.cpp
+	"DataBase.h"
+
+1663677162 c:\users\jota5\desktop\proyecto\proyecto\include\database.h
+
