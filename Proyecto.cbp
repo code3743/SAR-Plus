@@ -35,10 +35,14 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/DataBase.h" />
+		<Unit filename="include/Login.h" />
 		<Unit filename="include/Persona.h" />
+		<Unit filename="include/UiConsola.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/DataBase.cpp" />
+		<Unit filename="src/Login.cpp" />
 		<Unit filename="src/Persona.cpp" />
+		<Unit filename="src/UiConsola.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

@@ -1,11 +1,11 @@
-#include "Persona.h"
+// #include "Persona.h"
 
-Persona::Persona()
-{
-    //ctor
-}
+// Persona::Persona()
+// {
+//     //ctor
+// }
 
-Persona::~Persona()
-{
-    //dtor
-}
+// Persona::~Persona()
+// {
+//     //dtor
+// }

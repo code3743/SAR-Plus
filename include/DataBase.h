@@ -7,10 +7,12 @@ class DataBase
     public:
         DataBase();
         virtual ~DataBase();
+        void inicializarDB();
+
 
     protected:
 
-    private: 
+    private:
 };
 
 #endif // DATABASE_H
