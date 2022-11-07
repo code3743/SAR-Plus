@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1667781513 source:c:\users\jota5\desktop\proyecto\proyecto\main.cpp
+1667827712 source:c:\users\jota5\desktop\proyecto\proyecto\main.cpp
 	<iostream>
 	<string>
 	"UiConsola.h"
@@ -16,10 +16,10 @@
 
 1664308613 c:\users\jota5\desktop\proyecto\proyecto\include\login.h
 
-1667780996 source:c:\users\jota5\desktop\proyecto\proyecto\src\uiconsola.cpp
+1667827886 source:c:\users\jota5\desktop\proyecto\proyecto\src\uiconsola.cpp
 	"UiConsola.h"
 
-1667781110 c:\users\jota5\desktop\proyecto\proyecto\include\uiconsola.h
+1667784440 c:\users\jota5\desktop\proyecto\proyecto\include\uiconsola.h
 	<iostream>
 	<windows.h>
 

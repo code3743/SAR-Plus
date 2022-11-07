@@ -53,6 +53,24 @@ void UiConsola::imprimirInfo(string mensaje){
 void UiConsola::barraCargando(int valorActual, int valorMaximo){
     HANDLE hConsole = GetStdHandle( STD_OUTPUT_HANDLE );
     SetConsoleTextAttribute(hConsole, 13);
+    int porcentaje = 0;
+    if(valorActual <= valorMaximo){
+     porcentaje = (valorActual * 100) / valorMaximo;
+     //20 caracteres 100 porciento de la barra
+     int porcentajeBarra = (porcentaje * 20 )/ 100;
+     for(int i=0; i<= porcentajeBarra; i++){
+        cout<<"=";
+        Sleep(170);
+     }
+     SetConsoleTextAttribute(hConsole, 8);
+     for(int i = porcentajeBarra; i<= 20; i++){
+        cout<<"=";
+        Sleep(150);
+     }
+    SetConsoleTextAttribute(hConsole, 13);
+     cout<<" "<<porcentaje<<" %"<<endl;
+    }
+    else imprimirError("El valor actual supera el 100%");
 
 }
 

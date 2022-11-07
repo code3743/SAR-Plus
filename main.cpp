@@ -8,6 +8,7 @@ using namespace std;
 
 int main()
 {
-    UiConsola::borrarPantalla();
+    UiConsola::barraCargando(110, 120);
+
     return 0;
 }
