@@ -15,7 +15,7 @@ class UiConsola
        static void imprimirAlerta(string);
        static void imprimirInfo(string);
        static void imprimirHecho(string);
-       static void barraCargando(float);
+       static void barraCargando(int, int);
 
 };
 

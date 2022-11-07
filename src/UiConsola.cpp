@@ -50,7 +50,7 @@ void UiConsola::imprimirInfo(string mensaje){
         cout<<mensaje<<endl;
 }
 
-void UiConsola::barraCargando(float totalPorcentaje){
+void UiConsola::barraCargando(int valorActual, int valorMaximo){
     HANDLE hConsole = GetStdHandle( STD_OUTPUT_HANDLE );
     SetConsoleTextAttribute(hConsole, 13);
 
