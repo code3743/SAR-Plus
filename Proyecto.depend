@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1667827712 source:c:\users\jota5\desktop\proyecto\proyecto\main.cpp
+1667912841 source:c:\users\jota5\desktop\proyecto\proyecto\main.cpp
 	<iostream>
 	<string>
 	"UiConsola.h"
@@ -9,17 +9,26 @@
 
 1664305472 c:\users\jota5\desktop\proyecto\proyecto\include\database.h
 
-1663848412 source:c:\users\jota5\desktop\proyecto\proyecto\src\persona.cpp
+1667911663 source:c:\users\jota5\desktop\proyecto\proyecto\src\persona.cpp
+	"Persona.h"
 
 1664305497 source:c:\users\jota5\desktop\proyecto\proyecto\src\login.cpp
 	"Login.h"
 
 1664308613 c:\users\jota5\desktop\proyecto\proyecto\include\login.h
 
-1667827886 source:c:\users\jota5\desktop\proyecto\proyecto\src\uiconsola.cpp
+1667913206 source:c:\users\jota5\desktop\proyecto\proyecto\src\uiconsola.cpp
 	"UiConsola.h"
 
-1667784440 c:\users\jota5\desktop\proyecto\proyecto\include\uiconsola.h
+1667912528 c:\users\jota5\desktop\proyecto\proyecto\include\uiconsola.h
 	<iostream>
 	<windows.h>
+
+1667911780 c:\users\jota5\desktop\proyecto\proyecto\include\persona.h
+	<iostream>
+
+1667911755 source:c:\users\jota5\desktop\proyecto\proyecto\src\fecha.cpp
+	"Fecha.h"
+
+1667912244 c:\users\jota5\desktop\proyecto\proyecto\include\fecha.h
 

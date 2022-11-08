@@ -8,7 +8,7 @@ class Gerente : public Persona
 {
     public:
         Gerente();
-        void setApelllido() override;
+        
 
 };
 

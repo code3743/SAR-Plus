@@ -15,7 +15,11 @@ class UiConsola
        static void imprimirAlerta(string);
        static void imprimirInfo(string);
        static void imprimirHecho(string);
-       static void barraCargando(int, int);
+       static void barraProgreso(int, int);
+       static void leer(int&, string);
+       static void leer(double&, string);
+       static void leer(string&, string);
+
 
 };
 
