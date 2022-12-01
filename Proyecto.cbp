@@ -34,15 +34,35 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="db/configuraciones.sar" />
+		<Unit filename="include/CheckConfig.h" />
+		<Unit filename="include/ConfiguracionModelDB.h" />
 		<Unit filename="include/DataBase.h" />
+		<Unit filename="include/Definiciones.h" />
+		<Unit filename="include/Emplado.h" />
+		<Unit filename="include/Fecha.h" />
+		<Unit filename="include/Gerente.h" />
 		<Unit filename="include/Login.h" />
+		<Unit filename="include/MarcarIngreso.h" />
 		<Unit filename="include/Persona.h" />
+		<Unit filename="include/Rol.h" />
+		<Unit filename="include/Roles.h" />
 		<Unit filename="include/UiConsola.h" />
-		<Unit filename="main.cpp" />
+		<Unit filename="include/resource.h" />
+		<Unit filename="src/CheckConfig.cpp" />
+		<Unit filename="src/ConfiguracionModelDB.cpp" />
 		<Unit filename="src/DataBase.cpp" />
+		<Unit filename="src/Emplado.cpp" />
+		<Unit filename="src/Fecha.cpp" />
+		<Unit filename="src/Gerente.cpp" />
 		<Unit filename="src/Login.cpp" />
+		<Unit filename="src/MarcarIngreso.cpp" />
 		<Unit filename="src/Persona.cpp" />
+		<Unit filename="src/ProyectoFinal.cpp" />
+		<Unit filename="src/Rol.cpp" />
+		<Unit filename="src/Roles.cpp" />
 		<Unit filename="src/UiConsola.cpp" />
+		<Unit filename="src/configurarSistema.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

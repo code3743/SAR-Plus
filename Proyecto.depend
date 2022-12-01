@@ -1,34 +1,99 @@
 # depslib dependency file v1.0
-1667912841 source:c:\users\jota5\desktop\proyecto\proyecto\main.cpp
+1669465495 source:c:\users\jota5\desktop\proyecto\proyecto\main.cpp
 	<iostream>
 	<string>
 	"UiConsola.h"
 
-1663677162 source:c:\users\jota5\desktop\proyecto\proyecto\src\database.cpp
+1669825205 source:c:\users\jota5\desktop\proyecto\proyecto\src\database.cpp
 	"DataBase.h"
 
-1664305472 c:\users\jota5\desktop\proyecto\proyecto\include\database.h
+1669934961 c:\users\jota5\desktop\proyecto\proyecto\include\database.h
+	<iostream>
+	<fstream>
+	<string>
+	<sstream>
+	"ConfiguracionModelDB.h"
 
-1667911663 source:c:\users\jota5\desktop\proyecto\proyecto\src\persona.cpp
+1669821886 source:c:\users\jota5\desktop\proyecto\proyecto\src\persona.cpp
 	"Persona.h"
 
-1664305497 source:c:\users\jota5\desktop\proyecto\proyecto\src\login.cpp
+1669688373 source:c:\users\jota5\desktop\proyecto\proyecto\src\login.cpp
 	"Login.h"
 
-1664308613 c:\users\jota5\desktop\proyecto\proyecto\include\login.h
+1669741249 c:\users\jota5\desktop\proyecto\proyecto\include\login.h
+	<iostream>
+	"DataBase.h"
 
-1667913206 source:c:\users\jota5\desktop\proyecto\proyecto\src\uiconsola.cpp
+1669934701 source:c:\users\jota5\desktop\proyecto\proyecto\src\uiconsola.cpp
 	"UiConsola.h"
+	<string>
 
-1667912528 c:\users\jota5\desktop\proyecto\proyecto\include\uiconsola.h
+1669933540 c:\users\jota5\desktop\proyecto\proyecto\include\uiconsola.h
 	<iostream>
 	<windows.h>
 
-1667911780 c:\users\jota5\desktop\proyecto\proyecto\include\persona.h
+1669896444 c:\users\jota5\desktop\proyecto\proyecto\include\persona.h
 	<iostream>
 
 1667911755 source:c:\users\jota5\desktop\proyecto\proyecto\src\fecha.cpp
 	"Fecha.h"
 
-1667912244 c:\users\jota5\desktop\proyecto\proyecto\include\fecha.h
+1668208376 c:\users\jota5\desktop\proyecto\proyecto\include\fecha.h
+
+1669723306 source:c:\users\jota5\desktop\proyecto\proyecto\src\configuracionmodeldb.cpp
+	"ConfiguracionModelDB.h"
+
+1669723270 c:\users\jota5\desktop\proyecto\proyecto\include\configuracionmodeldb.h
+	<iostream>
+
+1669826063 source:c:\users\jota5\desktop\proyecto\proyecto\proyectofinal.cpp
+	<iostream>
+	"Definiciones.h"
+
+1669932963 c:\users\jota5\desktop\proyecto\proyecto\include\definiciones.h
+	"DataBase.h"
+	"CheckConfig.h"
+	"UiConsola.h"
+	"Login.h"
+	"MarcarIngreso.h"
+
+1669740487 c:\users\jota5\desktop\proyecto\proyecto\include\checkconfig.h
+	"DataBase.h"
+	<iostream>
+
+1669741249 c:\users\jota5\desktop\proyecto\proyecto\include\marcaringreso.h
+	<iostream>
+	"DataBase.h"
+
+1669932672 source:c:\users\jota5\desktop\proyecto\proyecto\src\checkconfig.cpp
+	"CheckConfig.h"
+	"UiConsola.h"
+
+1669935066 source:c:\users\jota5\desktop\proyecto\proyecto\src\configurarsistema.cpp
+	"Definiciones.h"
+	<iostream>
+
+1669900763 source:c:\users\jota5\desktop\proyecto\proyecto\src\emplado.cpp
+	"Emplado.h"
+
+1669900755 c:\users\jota5\desktop\proyecto\proyecto\include\emplado.h
+	"Persona.h"
+
+1669755528 source:c:\users\jota5\desktop\proyecto\proyecto\src\marcaringreso.cpp
+	"MarcarIngreso.h"
+
+1669935021 source:c:\users\jota5\desktop\proyecto\proyecto\src\gerente.cpp
+	"Gerente.h"
+
+1669935011 c:\users\jota5\desktop\proyecto\proyecto\include\gerente.h
+	<iostream>
+	"Persona.h"
+
+1669900472 source:c:\users\jota5\desktop\proyecto\proyecto\src\rol.cpp
+	"Rol.h"
+
+1669897891 c:\users\jota5\desktop\proyecto\proyecto\include\rol.h
+	<iostream>
+
+1669932814 source:c:\users\jota5\desktop\proyecto\proyecto\src\roles.cpp
 

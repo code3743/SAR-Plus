@@ -3,37 +3,24 @@
 #include <iostream>
 
 using namespace std;
-
-
 class Persona
 {
-    public:
-        Persona();
-        virtual ~Persona();
-        void setNombre();
-        void setApelllido();
-        void setDocumento();
-        void setCorreo();
-        void setPass();
+	Persona();
+	void setNombre(string);
+	void setApellido(string);
+	void setDocumento(string);
+	void setTelefono(string);
 
-        void setNombre(string);
-        void setApelllido(string);
-        void setDocumento(string);
-        void setCorreo(string);
-        void setPass(string);
+	string getNombre();
+	string getApellido();
+	string getTelefono();
+	string getDocumento();
+private:
+	string nombre;
+	string apellido;
+	string documento;
+	string telefono;
 
-        string getNombre();
-        string getApelllido();
-        string getDocumento();
-        string getCorreo();
-        string getPass();
-
-    private:
-        string nombre;
-        string apellido;
-        string docuemento;
-        string correo;
-        string pass;
 };
 
-#endif // PERSONA_H
+#endif

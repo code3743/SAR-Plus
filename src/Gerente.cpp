@@ -4,6 +4,3 @@ Gerente::Gerente(){
 
 }
 
-void Gerente::setApelllido(){
-
-}

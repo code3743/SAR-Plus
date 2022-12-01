@@ -4,13 +4,13 @@
 #include <iostream>
 #include "Persona.h"
 
-class Gerente : public Persona
+class Gerente
 {
     public:
         Gerente();
-        
+
 
 };
 
 
-#endif 
+#endif
