@@ -2,16 +2,18 @@
 #define CHECKCONFIG_H
 
 #include "DataBase.h"
+#include "UiConsola.h"
 #include <iostream>
 
 class CheckConfig
 {
 public:
-	CheckConfig(DataBase&);
+
 	bool configuracionCompleta();
 
 private:
-	DataBase& db;
+	DataBase& db = DataBase::getInstancia();
+	UiConsola& uiConsola = UiConsola::getIntancia();
 };
 
 #endif

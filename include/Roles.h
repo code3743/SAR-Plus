@@ -9,9 +9,14 @@ using namespace std;
 class Roles
 {
 public:
-	bool crearRol();
-	void editarRol(int);
+	Roles();
+	Roles(vector<Rol>);
+	bool crearRol(string, int);
+	bool editarRol(int, string, int);
 	string* listadoRoles();
+	int totalRoles();
+	void eliminarRol(int);
+	vector<Rol> getRoles();
 
 private:
 	vector<Rol> rolesDisponibles;

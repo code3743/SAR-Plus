@@ -5,8 +5,9 @@
 
 class Emplado: public Persona
 {
-	
+    public:
+	Emplado();
 };
 
 
-#endif 
+#endif

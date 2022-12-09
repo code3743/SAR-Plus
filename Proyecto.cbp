@@ -34,7 +34,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="db/configuraciones.sar" />
+		<Unit filename="ProyectoFinal.cpp" />
+		<Unit filename="db/config.csv" />
 		<Unit filename="include/CheckConfig.h" />
 		<Unit filename="include/ConfiguracionModelDB.h" />
 		<Unit filename="include/DataBase.h" />
@@ -48,6 +49,7 @@
 		<Unit filename="include/Rol.h" />
 		<Unit filename="include/Roles.h" />
 		<Unit filename="include/UiConsola.h" />
+		<Unit filename="include/Usuario.h" />
 		<Unit filename="include/resource.h" />
 		<Unit filename="src/CheckConfig.cpp" />
 		<Unit filename="src/ConfiguracionModelDB.cpp" />
@@ -58,10 +60,10 @@
 		<Unit filename="src/Login.cpp" />
 		<Unit filename="src/MarcarIngreso.cpp" />
 		<Unit filename="src/Persona.cpp" />
-		<Unit filename="src/ProyectoFinal.cpp" />
 		<Unit filename="src/Rol.cpp" />
 		<Unit filename="src/Roles.cpp" />
 		<Unit filename="src/UiConsola.cpp" />
+		<Unit filename="src/Usuario.cpp" />
 		<Unit filename="src/configurarSistema.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

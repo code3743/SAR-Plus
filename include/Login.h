@@ -2,21 +2,23 @@
 #define LOGIN_H
 #include <iostream>
 #include "DataBase.h"
+#include "UiConsola.h"
+
 using namespace std;
 
 class Login
 {
-	
-
-
-	static bool iniciarSesion();
-
-
+public:
+	void iniciarSesion();
 
 private:
-	string usuario;
+	string documento;
 	string contrasenna;
+
+
+
 	DataBase& db = DataBase::getInstancia();
+	UiConsola& uiConsola = UiConsola::getIntancia();
 };
 
 #endif

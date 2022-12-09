@@ -5,7 +5,9 @@
 using namespace std;
 class Persona
 {
+public:
 	Persona();
+	Persona(string, string, string, string);
 	void setNombre(string);
 	void setApellido(string);
 	void setDocumento(string);

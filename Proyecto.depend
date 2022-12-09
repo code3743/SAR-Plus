@@ -24,15 +24,15 @@
 	<iostream>
 	"DataBase.h"
 
-1669934701 source:c:\users\jota5\desktop\proyecto\proyecto\src\uiconsola.cpp
+1670342120 source:c:\users\jota5\desktop\proyecto\proyecto\src\uiconsola.cpp
 	"UiConsola.h"
 	<string>
 
-1669933540 c:\users\jota5\desktop\proyecto\proyecto\include\uiconsola.h
+1670339757 c:\users\jota5\desktop\proyecto\proyecto\include\uiconsola.h
 	<iostream>
 	<windows.h>
 
-1669896444 c:\users\jota5\desktop\proyecto\proyecto\include\persona.h
+1670417397 c:\users\jota5\desktop\proyecto\proyecto\include\persona.h
 	<iostream>
 
 1667911755 source:c:\users\jota5\desktop\proyecto\proyecto\src\fecha.cpp
@@ -69,7 +69,7 @@
 	"CheckConfig.h"
 	"UiConsola.h"
 
-1669935066 source:c:\users\jota5\desktop\proyecto\proyecto\src\configurarsistema.cpp
+1670416861 source:c:\users\jota5\desktop\proyecto\proyecto\src\configurarsistema.cpp
 	"Definiciones.h"
 	<iostream>
 

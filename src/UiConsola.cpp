@@ -20,6 +20,11 @@ void UiConsola::borrarPantalla(){
         saltoLinea = 1;
 }
 
+void UiConsola::espacio() {
+    espaciadores(CENTER, "");
+    cout << endl;
+}
+
 void UiConsola::imprimir(string mensaje, int alineador){
     color(7);
     espaciadores(alineador, mensaje);
@@ -30,7 +35,7 @@ void UiConsola::imprimir(string mensaje, int alineador){
 void UiConsola::espaciadores(int alineador, string texto){
       HANDLE hcon;
       hcon = GetStdHandle(STD_OUTPUT_HANDLE);
-      COORD dwPos;
+      COORD dwPos = COORD();
       dwPos.Y= saltoLinea;
     switch(alineador){
     case CENTER:
@@ -51,18 +56,16 @@ void UiConsola::espaciadores(int alineador, string texto){
 }
 
 
-void UiConsola::imprimirPersonalizado(int color, string mensaje, bool saltoLinea, int alineado){
+void UiConsola::imprimirPersonalizado(int colorPersonalizado, string mensaje, int alineado){
+    color(colorPersonalizado);
     espaciadores(alineado, mensaje);
-    HANDLE hConsole = GetStdHandle( STD_OUTPUT_HANDLE );
-    SetConsoleTextAttribute(hConsole, color);
     if(mensaje != "")
-        cout<<mensaje<<((saltoLinea) ? " \n" : " ");
-    SetConsoleTextAttribute(hConsole, 7);
+        cout<<mensaje<<endl;
+    color(7);
 }
 
 void UiConsola::imprimirError(string mensaje, int alineador){
     color(4);
-   
     espaciadores(alineador, mensaje);
     if(mensaje != "")
         cout<<mensaje<<endl;
@@ -75,106 +78,117 @@ void UiConsola::mostrarColoresDisponibles() {
 }
 
 
-void UiConsola::imprimirAlerta(string mensaje){
-    HANDLE hConsole = GetStdHandle( STD_OUTPUT_HANDLE );
-    SetConsoleTextAttribute(hConsole, 6);
+void UiConsola::imprimirAlerta(string mensaje, int alineador){
+    espaciadores(alineador, mensaje);
+    color(6);
     if(mensaje != "")
         cout<<mensaje<<endl;
-    SetConsoleTextAttribute(hConsole, 7);
+    color(7);
 }
 
-void UiConsola::imprimirHecho(string mensaje){
-    HANDLE hConsole = GetStdHandle( STD_OUTPUT_HANDLE );
-    SetConsoleTextAttribute(hConsole, 10);
+void UiConsola::imprimirHecho(string mensaje, int alineador) {
+    espaciadores(alineador, mensaje);
+    color(10);
     if(mensaje != "")
         cout<<mensaje<<endl;
-    SetConsoleTextAttribute(hConsole, 7);
+    color(7);
 }
 
-void UiConsola::imprimirInfo(string mensaje){
-    HANDLE hConsole = GetStdHandle( STD_OUTPUT_HANDLE );
-    SetConsoleTextAttribute(hConsole, 3);
+void UiConsola::imprimirInfo(string mensaje, int alineador) {
+    espaciadores(alineador, mensaje);
+    color(3);
     if(mensaje != "")
         cout<<mensaje<<endl;
-    SetConsoleTextAttribute(hConsole, 7);
+    color(7);
 }
 
 void UiConsola::barraProgreso(int valorActual, int valorMaximo){
-    HANDLE hConsole = GetStdHandle( STD_OUTPUT_HANDLE );
-    SetConsoleTextAttribute(hConsole, 13);
+
+    color(13);
     int porcentaje = 0;
     int porcentajeBarra = 0;
     if(valorActual <= valorMaximo){
      porcentaje = (valorActual * 100) / valorMaximo;
      porcentajeBarra = (porcentaje * 20 )/ 100;
+     espaciadores(CENTER,"==================== 100 %");
      cout<<" ";
      for(int i=1; i<= porcentajeBarra; i++){
         cout<<"=";
         Sleep(170);
      }
-     SetConsoleTextAttribute(hConsole, 8);
+     color(8);
      for(int i = porcentajeBarra; i< 20; i++){
         cout<<"=";
         Sleep(150);
      }
-    SetConsoleTextAttribute(hConsole, 13);
+     color(13);
      cout<<" "<<porcentaje<<" %"<<endl;
     }
     else imprimirError("El valor actual supera el 100%", 1);
-    SetConsoleTextAttribute(hConsole, 7);
+    color(7);
 }
 
-void UiConsola::leer(int& valor, string mensaje){
+void UiConsola::leer(int& valor, string mensaje, int alineador){
+    espaciadores(alineador, mensaje + "------");
     cout<<mensaje;
-    HANDLE hConsole = GetStdHandle( STD_OUTPUT_HANDLE );
-    SetConsoleTextAttribute(hConsole, 13);
-    cin>>valor;
-    SetConsoleTextAttribute(hConsole, 7);
+    color(13);
+    cin >> valor;
+    cin.ignore();
+    fflush(stdin);
+    color(7);
 
 }
 
 void UiConsola::leerDesicion(bool& valor, string mensaje) {
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    espaciadores(UiConsola::TAB, "");
     int valorTemp;
     cout << mensaje << endl;
+    espaciadores(UiConsola::TAB, "");
     cout << " 1.";
-    SetConsoleTextAttribute(hConsole, 10);
+    color(10);
     cout << " Si" << endl;
-    SetConsoleTextAttribute(hConsole, 7);
-    cout << "2.";
-    SetConsoleTextAttribute(hConsole, 4);
+    espaciadores(UiConsola::TAB, "");
+    color(7);
+    cout << " 2.";
+    color(4);
     cout << " No" << endl;
+    espaciadores(UiConsola::TAB, "");
+    color(7);
     cout << "Opcion: ";
+    color(13);
     cin >> valorTemp;
     valor = (valorTemp == 1);
+    color(7);
 }
 
-void UiConsola::leer(double& valor, string mensaje){
+void UiConsola::leer(double& valor, string mensaje, int alineador) {
+    espaciadores(alineador, mensaje + "-------");
     cout<<mensaje;
-    HANDLE hConsole = GetStdHandle( STD_OUTPUT_HANDLE );
-    SetConsoleTextAttribute(hConsole, 13);
-    cin>>valor;
-    SetConsoleTextAttribute(hConsole, 7);
+    color(13);
+    cin >> valor;
+    cin.ignore();
+    fflush(stdin);
+    color(7);
 }
 
-void UiConsola::leer(string& valor, string mensaje){
+void UiConsola::leer(string& valor, string mensaje, int alineador){
+
+    espaciadores(alineador, mensaje + " ---------------");
     cout<<mensaje;
-    HANDLE hConsole = GetStdHandle( STD_OUTPUT_HANDLE );
-    SetConsoleTextAttribute(hConsole, 13);
+
+    color(13);
     fflush(stdin);
     getline(cin, valor);
-    SetConsoleTextAttribute(hConsole, 7);
+    color(7);
 }
 
 
 void UiConsola::menuOpciones(string opciones[], int totalOpciones){
-
-
-    HANDLE hConsole = GetStdHandle( STD_OUTPUT_HANDLE );
     for(int i= 0; i< totalOpciones; i++){
-        SetConsoleTextAttribute(hConsole, 13);
+        espaciadores(TAB, opciones[i]);
+        color(13);
         cout<<(i + 1)<<". ";
-        SetConsoleTextAttribute(hConsole, 7);
+        color(7);
         cout<<opciones[i]<<endl;
     }
 

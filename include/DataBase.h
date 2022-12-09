@@ -4,9 +4,12 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+
 #include "ConfiguracionModelDB.h"
-
-
+#include "Usuario.h"
+#include "Rol.h"
+#include <vector>
+#include "Empleado.h"
 
 using namespace std;
 
@@ -20,26 +23,47 @@ public:
 	ConfiguracionModelDB getConfiguraciones();
 	void setConfiguracionSistema(ConfiguracionModelDB);
 	bool inicializarConfiguracion();
-	void guardarProducto();
-	void consultarProducto();
+	
+	bool escribirUsuario(Usuario);
+	void cargarUsuariosAdministracion();
 
+	void agreagarEmpleado(Empleado);
+	void cargarEmpleados();
+
+	void cargarRoles();
+	void agregarRol(Rol);
+
+	bool existeUsuario(string);
+	bool existeEmpleado(string);
+	
+	Usuario getUsuarioPorDocumento(string);
+	
+	vector<Rol>listaRolesDisponibles();
+	vector<Usuario> listaUsuarios();
+	vector<Empleado> listaEmpleados();
 
 private:
 	DataBase();
 
-    enum tipoConexion {
+	const enum tipoConexion {
 		Leer, Escribir, SobreEscribir
 	};
 
 
 	bool establecerConexionDB(string, ifstream&, int);
-	void cerrarConexionDB(ifstream&);
 	bool establecerConexionDB(string, ofstream&, int);
+	void cerrarConexionDB(ifstream&);
 	void cerrarConexionDB(ofstream&);
-	string rutaEmpleadosDB = "./db/administracion.csv";
+
+	string rutaEmpleados = "./db/empleados.csv";
+	string rutuaUsers = "./db/users.csv";
 	string rutaConfiguraciones = "./db/config.csv";
+	string rutaRoles = "./db/roles.csv";
 
 	ConfiguracionModelDB configuracionInicial;
+	vector<Rol> rolesDisponibles;
+	vector<Usuario> usuariosAdministradores;
+	vector<Empleado> empleados;
 };
 
 #endif

@@ -3,25 +3,17 @@
 
 using namespace std;
 
-
-
 int main()
-{	
-	CheckConfig checkConfig = CheckConfig(DataBase::getInstancia());
+{
+	CheckConfig checkConfig;
+	Login login;
+	
 	while (true) {
 		if (checkConfig.configuracionCompleta()) {
-
-			//Marcar ingreso
-			//Ingresar cedula
-			cout << "Configurado";
+			login.iniciarSesion();
 			break;
 		}
-		else {
-			if (!configurarSistema()) break;
-		}
+		else if (!configurarSistema()) break;
 	}
-	
 	return 0;
 }
-
-

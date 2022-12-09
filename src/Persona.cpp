@@ -4,6 +4,14 @@ Persona::Persona() {
 
 }
 
+Persona::Persona(string nombre, string apellido, string telefono, string documento) {
+	this->nombre = nombre;
+	this->apellido = apellido;
+	this->documento = documento;
+	this->telefono = telefono;
+
+}
+
 void Persona::setNombre(string nombre) {
 	this->nombre = nombre;
 }
