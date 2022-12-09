@@ -2,14 +2,14 @@
 #define DATABASE_H
 #include <iostream>
 #include <fstream>
-#include <string>
+#include <vector>
 #include <sstream>
+#include <string>
 
 #include "ConfiguracionModelDB.h"
+#include "Empleado.h"
 #include "Usuario.h"
 #include "Rol.h"
-#include <vector>
-#include "Empleado.h"
 
 using namespace std;
 
@@ -23,7 +23,7 @@ public:
 	ConfiguracionModelDB getConfiguraciones();
 	void setConfiguracionSistema(ConfiguracionModelDB);
 	bool inicializarConfiguracion();
-	
+
 	bool escribirUsuario(Usuario);
 	void cargarUsuariosAdministracion();
 
@@ -35,9 +35,9 @@ public:
 
 	bool existeUsuario(string);
 	bool existeEmpleado(string);
-	
+
 	Usuario getUsuarioPorDocumento(string);
-	
+
 	vector<Rol>listaRolesDisponibles();
 	vector<Usuario> listaUsuarios();
 	vector<Empleado> listaEmpleados();
@@ -45,7 +45,7 @@ public:
 private:
 	DataBase();
 
-	const enum tipoConexion {
+	enum tipoConexion {
 		Leer, Escribir, SobreEscribir
 	};
 

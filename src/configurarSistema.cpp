@@ -1,8 +1,9 @@
-#include "Definiciones.h"
 #include <iostream>
-#include "Usuario.h"
-#include "GestionRoles.h"
+
+#include "Definiciones.h"
 #include "GestionEmpleados.h"
+#include "GestionRoles.h"
+#include "Usuario.h"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ GestionEmpleados gestionEmpleados;
 bool configurarSistema() {
 	ConfiguracionModelDB nuevaConfig;
 	string nombre, nit;
-	
+
 	uiConsola.imprimir("Bienvenido", UiConsola::CENTER);
 	uiConsola.imprimir("-----------------------", UiConsola::CENTER);
 	uiConsola.imprimirInfo("Configuracion del Sistema", UiConsola::CENTER);
@@ -78,7 +79,7 @@ bool crearUsuarioAdministrador() {
 	catch (...)
 	{
 		return false;
-	
+
 	}
 }
-	
+

@@ -4,41 +4,48 @@
 	<string>
 	"UiConsola.h"
 
-1669825205 source:c:\users\jota5\desktop\proyecto\proyecto\src\database.cpp
+1670613967 source:c:\users\jota5\desktop\proyecto\proyecto\src\database.cpp
 	"DataBase.h"
 
-1669934961 c:\users\jota5\desktop\proyecto\proyecto\include\database.h
+1670618128 c:\users\jota5\desktop\proyecto\proyecto\include\database.h
 	<iostream>
 	<fstream>
-	<string>
+	<vector>
 	<sstream>
+	<string>
 	"ConfiguracionModelDB.h"
+	"Empleado.h"
+	"Usuario.h"
+	"Rol.h"
 
-1669821886 source:c:\users\jota5\desktop\proyecto\proyecto\src\persona.cpp
+1670587715 source:c:\users\jota5\desktop\proyecto\proyecto\src\persona.cpp
 	"Persona.h"
 
-1669688373 source:c:\users\jota5\desktop\proyecto\proyecto\src\login.cpp
+1670615995 source:c:\users\jota5\desktop\proyecto\proyecto\src\login.cpp
 	"Login.h"
 
-1669741249 c:\users\jota5\desktop\proyecto\proyecto\include\login.h
+1670611730 c:\users\jota5\desktop\proyecto\proyecto\include\login.h
 	<iostream>
 	"DataBase.h"
+	"UiConsola.h"
 
-1670342120 source:c:\users\jota5\desktop\proyecto\proyecto\src\uiconsola.cpp
+1670548883 source:c:\users\jota5\desktop\proyecto\proyecto\src\uiconsola.cpp
 	"UiConsola.h"
 	<string>
 
-1670339757 c:\users\jota5\desktop\proyecto\proyecto\include\uiconsola.h
+1670548893 c:\users\jota5\desktop\proyecto\proyecto\include\uiconsola.h
 	<iostream>
 	<windows.h>
 
-1670417397 c:\users\jota5\desktop\proyecto\proyecto\include\persona.h
+1670587734 c:\users\jota5\desktop\proyecto\proyecto\include\persona.h
 	<iostream>
 
-1667911755 source:c:\users\jota5\desktop\proyecto\proyecto\src\fecha.cpp
+1670590613 source:c:\users\jota5\desktop\proyecto\proyecto\src\fecha.cpp
 	"Fecha.h"
 
-1668208376 c:\users\jota5\desktop\proyecto\proyecto\include\fecha.h
+1670588093 c:\users\jota5\desktop\proyecto\proyecto\include\fecha.h
+	<iostream>
+	<string>
 
 1669723306 source:c:\users\jota5\desktop\proyecto\proyecto\src\configuracionmodeldb.cpp
 	"ConfiguracionModelDB.h"
@@ -46,37 +53,42 @@
 1669723270 c:\users\jota5\desktop\proyecto\proyecto\include\configuracionmodeldb.h
 	<iostream>
 
-1669826063 source:c:\users\jota5\desktop\proyecto\proyecto\proyectofinal.cpp
+1670617278 source:c:\users\jota5\desktop\proyecto\proyecto\proyectofinal.cpp
 	<iostream>
 	"Definiciones.h"
 
-1669932963 c:\users\jota5\desktop\proyecto\proyecto\include\definiciones.h
+1670540011 c:\users\jota5\desktop\proyecto\proyecto\include\definiciones.h
 	"DataBase.h"
-	"CheckConfig.h"
 	"UiConsola.h"
+	"CheckConfig.h"
 	"Login.h"
 	"MarcarIngreso.h"
+	"Roles.h"
 
-1669740487 c:\users\jota5\desktop\proyecto\proyecto\include\checkconfig.h
+1670590244 c:\users\jota5\desktop\proyecto\proyecto\include\checkconfig.h
 	"DataBase.h"
+	"UiConsola.h"
 	<iostream>
 
 1669741249 c:\users\jota5\desktop\proyecto\proyecto\include\marcaringreso.h
 	<iostream>
 	"DataBase.h"
 
-1669932672 source:c:\users\jota5\desktop\proyecto\proyecto\src\checkconfig.cpp
+1670613975 source:c:\users\jota5\desktop\proyecto\proyecto\src\checkconfig.cpp
 	"CheckConfig.h"
 	"UiConsola.h"
 
-1670416861 source:c:\users\jota5\desktop\proyecto\proyecto\src\configurarsistema.cpp
-	"Definiciones.h"
+1670618025 source:c:\users\jota5\desktop\proyecto\proyecto\src\configurarsistema.cpp
 	<iostream>
+	"Definiciones.h"
+	"GestionEmpleados.h"
+	"GestionRoles.h"
+	"Usuario.h"
 
-1669900763 source:c:\users\jota5\desktop\proyecto\proyecto\src\emplado.cpp
+1670417367 source:c:\users\jota5\desktop\proyecto\proyecto\src\emplado.cpp
 	"Emplado.h"
 
-1669900755 c:\users\jota5\desktop\proyecto\proyecto\include\emplado.h
+1670417342 c:\users\jota5\desktop\proyecto\proyecto\include\emplado.h
 	"Persona.h"
 
 1669755528 source:c:\users\jota5\desktop\proyecto\proyecto\src\marcaringreso.cpp
@@ -92,8 +104,56 @@
 1669900472 source:c:\users\jota5\desktop\proyecto\proyecto\src\rol.cpp
 	"Rol.h"
 
-1669897891 c:\users\jota5\desktop\proyecto\proyecto\include\rol.h
+1670336761 c:\users\jota5\desktop\proyecto\proyecto\include\rol.h
 	<iostream>
 
-1669932814 source:c:\users\jota5\desktop\proyecto\proyecto\src\roles.cpp
+1670543658 source:c:\users\jota5\desktop\proyecto\proyecto\src\roles.cpp
+	"Roles.h"
+
+1670418565 c:\users\jota5\desktop\proyecto\proyecto\include\usuario.h
+	"Persona.h"
+
+1670588166 c:\users\jota5\desktop\proyecto\proyecto\include\empleado.h
+	"Persona.h"
+	"Fecha.h"
+
+1670543470 c:\users\jota5\desktop\proyecto\proyecto\include\roles.h
+	<iostream>
+	<vector>
+	"UiConsola.h"
+	"Rol.h"
+
+1670607866 source:c:\users\jota5\desktop\proyecto\proyecto\src\usuario.cpp
+	"Usuario.h"
+
+1670548756 c:\users\jota5\desktop\proyecto\proyecto\include\gestionempleados.h
+	<iostream>
+	"DataBase.h"
+	"UiConsola.h"
+	<vector>
+	"Empleado.h"
+	"Fecha.h"
+	<string>
+
+1670543261 c:\users\jota5\desktop\proyecto\proyecto\include\gestionroles.h
+	<iostream>
+	"Roles.h"
+	"UiConsola.h"
+	"DataBase.h"
+
+1670588192 source:c:\users\jota5\desktop\proyecto\proyecto\src\empleado.cpp
+	"Empleado.h"
+
+1670617281 source:c:\users\jota5\desktop\proyecto\proyecto\src\gestionempleados.cpp
+	"GestionEmpleados.h"
+
+1670591442 source:c:\users\jota5\desktop\proyecto\proyecto\src\gestionroles.cpp
+	"GestionRoles.h"
+
+1670336758 source:c:\users\jota5\desktop\proyecto\proyecto\src\paneladministrativo.cpp
+	"PanelAdministrativo.h"
+
+1670616254 c:\users\jota5\desktop\proyecto\proyecto\include\paneladministrativo.h
+	"GestionEmpleados.h"
+	"GestionRoles.h"
 
