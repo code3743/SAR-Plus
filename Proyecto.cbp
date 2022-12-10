@@ -43,10 +43,8 @@
 		<Unit filename="include/ConfiguracionModelDB.h" />
 		<Unit filename="include/DataBase.h" />
 		<Unit filename="include/Definiciones.h" />
-		<Unit filename="include/Emplado.h" />
 		<Unit filename="include/Empleado.h" />
 		<Unit filename="include/Fecha.h" />
-		<Unit filename="include/Gerente.h" />
 		<Unit filename="include/GestionEmpleados.h" />
 		<Unit filename="include/GestionRoles.h" />
 		<Unit filename="include/Login.h" />
@@ -61,10 +59,8 @@
 		<Unit filename="src/CheckConfig.cpp" />
 		<Unit filename="src/ConfiguracionModelDB.cpp" />
 		<Unit filename="src/DataBase.cpp" />
-		<Unit filename="src/Emplado.cpp" />
 		<Unit filename="src/Empleado.cpp" />
 		<Unit filename="src/Fecha.cpp" />
-		<Unit filename="src/Gerente.cpp" />
 		<Unit filename="src/GestionEmpleados.cpp" />
 		<Unit filename="src/GestionRoles.cpp" />
 		<Unit filename="src/Login.cpp" />
