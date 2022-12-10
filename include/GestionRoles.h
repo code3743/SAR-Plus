@@ -12,14 +12,20 @@ using namespace std;
 class GestionRoles {
 public:
 	void menuRoles();
-	void crearRol(Roles&);
-	void editarRol(Roles&);
-	void eliminarRol(Roles&);
-	void listaRoles(Roles&);
-	bool finalizarConfigRoles(Roles&);
+	
+protected:
+	void setRoles(vector<Rol>);
+	vector<Rol> getRoles();
+	void crearRol();
+	void editarRol();
+	void eliminarRol();
+	void listaRoles();
+	bool finalizarConfigRoles();
+	
 private:
 	UiConsola& uiConsola = UiConsola::getIntancia();
 	DataBase& db = DataBase::getInstancia();
+	Roles roles;
 };
 
 

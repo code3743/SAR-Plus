@@ -6,7 +6,6 @@ void GestionRoles::menuRoles() {
 
 	string opciones[] = { "Crear Rol","Lista de roles", "Editar rol", "Eliminar Rol", "Finalizar" };
 	int opt = 0;
-	Roles roles;
 	string nombreRol;
 	int baseSalarial;
 	int indexRol;
@@ -19,19 +18,19 @@ void GestionRoles::menuRoles() {
 		switch (opt)
 		{
 		case 1:
-			crearRol(roles);
+			crearRol();
 			break;
 		case 2:
-			listaRoles(roles);
+			listaRoles();
 			break;
 		case 3:
-			editarRol(roles);
+			editarRol();
 			break;
 		case 4:
-			eliminarRol(roles);
+			eliminarRol();
 			break;
 		case 5:
-			if (finalizarConfigRoles(roles)) return;
+			if (finalizarConfigRoles()) return;
 			break;
 		default:
 			uiConsola.imprimirError("Opcion invalida", UiConsola::CENTER);
@@ -41,7 +40,7 @@ void GestionRoles::menuRoles() {
 	}
 }
 
-void GestionRoles::crearRol(Roles& roles) {
+void GestionRoles::crearRol() {
 	string nombreRol;
 	int baseSalarial;
 
@@ -55,7 +54,7 @@ void GestionRoles::crearRol(Roles& roles) {
 
 	Sleep(600);
 }
-void GestionRoles::listaRoles(Roles& roles) {
+void GestionRoles::listaRoles() {
 	uiConsola.borrarPantalla();
 	uiConsola.imprimirInfo("Roles", UiConsola::TAB);
 	if (roles.totalRoles() > 0) {
@@ -68,7 +67,16 @@ void GestionRoles::listaRoles(Roles& roles) {
 	}
 }
 
-void GestionRoles::editarRol(Roles& roles) {
+void GestionRoles::setRoles(vector<Rol> roles) {
+	this->roles = Roles(roles);
+}
+
+vector<Rol> GestionRoles::getRoles() {
+
+	return roles.getRoles();
+}
+
+void GestionRoles::editarRol() {
 	string nombreRol;
 	int baseSalarial;
 	int indexRol;
@@ -88,7 +96,7 @@ void GestionRoles::editarRol(Roles& roles) {
 	Sleep(600);
 }
 
-void GestionRoles::eliminarRol(Roles& roles) {
+void GestionRoles::eliminarRol() {
 	int indexRol;
 	uiConsola.borrarPantalla();
 	uiConsola.imprimirInfo("Eliminar Roles", UiConsola::CENTER);
@@ -102,7 +110,7 @@ void GestionRoles::eliminarRol(Roles& roles) {
 	Sleep(600);
 }
 
-bool GestionRoles::finalizarConfigRoles(Roles& roles) {
+bool GestionRoles::finalizarConfigRoles() {
 	if (roles.totalRoles() > 0) {
 		for (int i = 0; i < roles.totalRoles(); i++) {
 			db.agregarRol(roles.getRoles()[i]);

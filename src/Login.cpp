@@ -1,6 +1,7 @@
 #include "Login.h"
 
 
+
 void Login::iniciarSesion(){
 	while (true) {
 		uiConsola.borrarPantalla();
@@ -18,7 +19,7 @@ void Login::iniciarSesion(){
 			uiConsola.leer(contrasenna, "Ingrese la contrasena: ", UiConsola::CENTER);
 
 			if (db.getUsuarioPorDocumento(documento).getContrasenna() == contrasenna) {
-				//panel administrativo
+				dashBoard.inicio(db.getUsuarioPorDocumento(documento));
 			}
 			else {
 				uiConsola.espacio();
@@ -31,6 +32,7 @@ void Login::iniciarSesion(){
 			for (int i = 0; i < db.listaEmpleados().size(); i++) {
 				if (db.listaEmpleados()[i].getDocumento() == documento) {
 					//marcar ingreso
+					uiConsola.espacio();
 					uiConsola.imprimir("Bienvenido " + db.listaEmpleados()[i].getNombre() + "  " + db.listaEmpleados()[i].getApellido(), UiConsola::CENTER);
 					uiConsola.imprimirInfo("Feliz Jornada", UiConsola::CENTER);
 					Sleep(800);					

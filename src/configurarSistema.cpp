@@ -16,7 +16,7 @@ GestionEmpleados gestionEmpleados;
 bool configurarSistema() {
 	ConfiguracionModelDB nuevaConfig;
 	string nombre, nit;
-
+	bool crearEmpleados;
 	uiConsola.imprimir("Bienvenido", UiConsola::CENTER);
 	uiConsola.imprimir("-----------------------", UiConsola::CENTER);
 	uiConsola.imprimirInfo("Configuracion del Sistema", UiConsola::CENTER);
@@ -28,7 +28,6 @@ bool configurarSistema() {
 		if (!crearUsuarioAdministrador()) throw "No se pudo crear el administrador";
 		gestionRoles.menuRoles();
 		uiConsola.borrarPantalla();
-		bool crearEmpleados;
 		uiConsola.leerDesicion(crearEmpleados, "Desea agregar empleados");
 		if (crearEmpleados) {
 			gestionEmpleados.menuEmpleados();
@@ -51,12 +50,7 @@ bool configurarSistema() {
 
 bool crearUsuarioAdministrador() {
 
-	Usuario user = Usuario();
-	string nombre;
-	string apellido;
-	string documento;
-	string telefono;
-	string contrasenna;
+	string nombre, apellido, documento, telefono, contrasenna;
 
 	uiConsola.borrarPantalla();
 	uiConsola.imprimirInfo("Perfil Administrador", UiConsola::CENTER);
@@ -66,20 +60,14 @@ bool crearUsuarioAdministrador() {
 	uiConsola.leer(telefono, "Telefono: ", UiConsola::CENTER);
 	uiConsola.leer(contrasenna, "Contrasena: ", UiConsola::CENTER);
 
-
-	user.setNombre(nombre);
-	user.setApellido(apellido);
-	user.setDocumento(documento);
-	user.setTelefono(telefono);
-	user.setContrasenna(contrasenna);
 	try
 	{
-		return db.escribirUsuario(user);
+		return db.escribirUsuario(Usuario(nombre, apellido, telefono, documento, contrasenna, true));
 	}
 	catch (...)
 	{
 		return false;
-
+	
 	}
 }
-
+	

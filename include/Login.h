@@ -3,6 +3,7 @@
 #include <iostream>
 #include "DataBase.h"
 #include "UiConsola.h"
+#include "PanelAdministrativo.h"
 
 using namespace std;
 
@@ -15,10 +16,10 @@ private:
 	string documento;
 	string contrasenna;
 
-
-
 	DataBase& db = DataBase::getInstancia();
 	UiConsola& uiConsola = UiConsola::getIntancia();
+
+	PanelAdministrativo dashBoard;
 };
 
 #endif

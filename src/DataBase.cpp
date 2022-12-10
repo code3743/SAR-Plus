@@ -90,11 +90,26 @@ void DataBase::cargarEmpleados() {
 	cerrarConexionDB(archivoDB);
 }
 
+void DataBase::actualizarEmpleados(vector<Empleado> empleados) {
+	ofstream archivoDB;
+	if (!establecerConexionDB(rutaEmpleados, archivoDB, DataBase::SobreEscribir)) throw "Fue imposible guardar la configuracion";
+	for (int i = 0; i < empleados.size(); i++) {
+		archivoDB << empleados[i].getNombre() << ";";
+		archivoDB << empleados[i].getApellido() << ";";
+		archivoDB << empleados[i].getDocumento() << ";";
+		archivoDB << empleados[i].getTelefono() << ";";
+		archivoDB << empleados[i].getRol() << ";";
+		archivoDB << empleados[i].getFechaVinculacion() << endl;
+	}
+	cerrarConexionDB(archivoDB);
+	this->empleados = empleados;
+}
+
 void DataBase::cargarUsuariosAdministracion() {
 	ifstream archivoDB;
 	if (!establecerConexionDB(rutuaUsers, archivoDB, DataBase::Leer))	throw "No se puede establecer conexion";
 	string datosTemp;
-	string nombre, apellido, documento, telefono, contrasenna;
+	string nombre, apellido, documento, telefono, contrasenna, admin;
 	while (getline(archivoDB, datosTemp)) {
 		stringstream token(datosTemp);
 		getline(token, nombre, ';');
@@ -102,17 +117,22 @@ void DataBase::cargarUsuariosAdministracion() {
 		getline(token, telefono, ';');
 		getline(token, documento, ';');
 		getline(token, contrasenna, ';');
-		
-		Usuario user;
-		user.setNombre(nombre);
-		user.setApellido(apellido);
-		user.setTelefono(telefono);
-		user.setDocumento(documento);
-		user.setContrasenna(contrasenna);
+		getline(token, admin, ';');
 
-		usuariosAdministradores.push_back(user);
+		usuariosAdministradores.push_back(Usuario(nombre, apellido, telefono, documento, contrasenna, (admin == "1")));
 	}
 	cerrarConexionDB(archivoDB);
+}
+
+void DataBase::actualizarRoles(vector<Rol> roles){
+	ofstream archivoDB;
+	if (!establecerConexionDB(rutaRoles, archivoDB, DataBase::SobreEscribir)) throw "Fue imposible guardar la configuracion";
+	for (int i = 0; i < roles.size(); i++) {
+		archivoDB << roles[i].getNombreRol() << ";";
+		archivoDB << roles[i].getBaseSalarial() << endl;
+	}
+	cerrarConexionDB(archivoDB);
+	rolesDisponibles = roles;
 }
 
 void DataBase::agregarRol(Rol nuevoRol) {
@@ -157,16 +177,37 @@ vector<Usuario> DataBase::listaUsuarios() {
 	return usuariosAdministradores;
 }
 
+void DataBase::actualizarUsuario(Usuario user) {
+	for (int i = 0; i < usuariosAdministradores.size(); i++) {
+		if (usuariosAdministradores[i].getDocumento() == user.getDocumento()) {
+			usuariosAdministradores[i] = user;
+			break;
+		}
+	}
+	ofstream archivoDB;
+	if (!establecerConexionDB(rutuaUsers, archivoDB, DataBase::SobreEscribir))	throw "No se puede establecer conexion";
+	for (int i = 0; i < usuariosAdministradores.size(); i++) {
+		archivoDB << usuariosAdministradores[i].getNombre() << ";" << usuariosAdministradores[i].getApellido() << ";" << usuariosAdministradores[i].getTelefono() << ";" << usuariosAdministradores[i].getDocumento() << ";" << usuariosAdministradores[i].getContrasenna() << ";" << usuariosAdministradores[i].esAdmin() << endl;
+	}
+	cerrarConexionDB(archivoDB);
+}
 
+void DataBase::eliminarUsuario(int index) {
+	usuariosAdministradores.erase(usuariosAdministradores.begin() + (index - 1));
+	ofstream archivoDB;
+	if (!establecerConexionDB(rutuaUsers, archivoDB, DataBase::SobreEscribir))	throw "No se puede establecer conexion";
+	for (int i = 0; i < usuariosAdministradores.size(); i++) {
+		archivoDB << usuariosAdministradores[i].getNombre() << ";" << usuariosAdministradores[i].getApellido() << ";" << usuariosAdministradores[i].getTelefono() << ";" << usuariosAdministradores[i].getDocumento() << ";" << usuariosAdministradores[i].getContrasenna() << ";" << usuariosAdministradores[i].esAdmin() << endl;
+	}
+	cerrarConexionDB(archivoDB);
+}
 
 bool DataBase::escribirUsuario(Usuario user) {
 	ofstream archivoDB;
 	if (!establecerConexionDB(rutuaUsers, archivoDB, DataBase::Escribir))	throw "No se puede establecer conexion";
-	archivoDB << user.getNombre() << ";" << user.getApellido() << ";" << user.getTelefono() << ";" << user.getDocumento() << ";" << user.getContrasenna() << endl;
+	archivoDB << user.getNombre() << ";" << user.getApellido() << ";" << user.getTelefono() << ";" << user.getDocumento() << ";" << user.getContrasenna()<<";" << user.esAdmin() << endl;
 	cerrarConexionDB(archivoDB);
-	
 	usuariosAdministradores.push_back(user);
-
 	return true;
 }
 

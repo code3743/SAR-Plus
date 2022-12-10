@@ -7,7 +7,7 @@
 1670613967 source:c:\users\jota5\desktop\proyecto\proyecto\src\database.cpp
 	"DataBase.h"
 
-1670618128 c:\users\jota5\desktop\proyecto\proyecto\include\database.h
+1670620051 c:\users\jota5\desktop\proyecto\proyecto\include\database.h
 	<iostream>
 	<fstream>
 	<vector>
@@ -21,7 +21,7 @@
 1670587715 source:c:\users\jota5\desktop\proyecto\proyecto\src\persona.cpp
 	"Persona.h"
 
-1670615995 source:c:\users\jota5\desktop\proyecto\proyecto\src\login.cpp
+1670671279 source:c:\users\jota5\desktop\proyecto\proyecto\src\login.cpp
 	"Login.h"
 
 1670611730 c:\users\jota5\desktop\proyecto\proyecto\include\login.h

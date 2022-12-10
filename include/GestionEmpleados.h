@@ -14,17 +14,23 @@ class GestionEmpleados {
 public:
 
 	void menuEmpleados();
+
+protected:
+
 	void crearEmpleados();
 	void listarEmpleados();
 	void editarEmpleado();
 	void eliminarEmpleado();
+	void setEmpleados(vector<Empleado>);
+	vector<Empleado> getEmpleados();
 
 private:
 	UiConsola& uiConsola = UiConsola::getIntancia();
-	bool existeEmpleado(string);
-	void mostrarEmpleado(Empleado);
 	DataBase& db = DataBase::getInstancia();
 	vector<Empleado> empleados;
+	
+	bool existeEmpleado(string);
+	void mostrarEmpleado(Empleado);
 
 };
 

@@ -40,6 +40,14 @@ void GestionEmpleados::menuEmpleados() {
 	
 }
 
+void GestionEmpleados::setEmpleados(vector<Empleado> empleados) {
+	this->empleados = empleados;
+}
+
+vector<Empleado> GestionEmpleados::getEmpleados() {
+	return empleados;
+}
+
 void GestionEmpleados::crearEmpleados(){
 	bool guardar;
 	string nombre, apellido, documento, telefono;
@@ -81,12 +89,7 @@ void GestionEmpleados::crearEmpleados(){
 
 	fechaVinculacion = Fecha(dia, mes, anio);
 	
-	empleado.setNombre(nombre);
-	empleado.setApellido(apellido);
-	empleado.setDocumento(documento);
-	empleado.setTelefono(telefono);
-	empleado.setRol(db.listaRolesDisponibles()[indexRol - 1].getNombreRol());
-	empleado.setFechaVinculacion(fechaVinculacion);
+	empleado = Empleado(nombre, apellido, telefono, documento, db.listaRolesDisponibles()[indexRol - 1].getNombreRol(), fechaVinculacion.getFecha());
 	uiConsola.borrarPantalla();
 	mostrarEmpleado(empleado);
 	uiConsola.leerDesicion(guardar, "Guardar");
@@ -129,7 +132,7 @@ void GestionEmpleados::listarEmpleados(){
 	uiConsola.imprimirInfo("Nombre - Documento", UiConsola::CENTER);
 	uiConsola.espacio();
 	for (int i = 0; i < empleados.size(); i++) {
-		uiConsola.imprimir(to_string(i + 1) + ". " + empleados[i].getNombre() + " - " + empleados[i].getDocumento(), UiConsola::TAB);
+		uiConsola.imprimir(to_string(i + 1) + ". " + empleados[i].getNombre() + " - " + empleados[i].getDocumento() + " - " + empleados[i].getRol(), UiConsola::TAB);
 	}
 	system("pause");
 }
