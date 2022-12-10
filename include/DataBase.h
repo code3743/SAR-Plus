@@ -23,7 +23,7 @@ public:
 	ConfiguracionModelDB getConfiguraciones();
 	void setConfiguracionSistema(ConfiguracionModelDB);
 	bool inicializarConfiguracion();
-	
+
 	bool escribirUsuario(Usuario);
 	void cargarUsuariosAdministracion();
 
@@ -40,7 +40,7 @@ public:
 	void actualizarUsuario(Usuario);
 	void eliminarUsuario(int);
 	Usuario getUsuarioPorDocumento(string);
-	
+
 	vector<Rol>listaRolesDisponibles();
 	vector<Usuario> listaUsuarios();
 	vector<Empleado> listaEmpleados();
@@ -48,7 +48,7 @@ public:
 private:
 	DataBase();
 
-	const enum tipoConexion {
+	enum tipoConexion {
 		Leer, Escribir, SobreEscribir
 	};
 
