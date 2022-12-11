@@ -108,14 +108,6 @@ void DataBase::actualizarEmpleados(vector<Empleado> empleados) {
 	this->empleados = empleados;
 }
 
-void DataBase::initRegistroEmpleados(){
-    ofstream archivoDB;
-	if (!establecerConexionDB(rutaRegistroHora, archivoDB, DataBase::SobreEscribir)) throw "Fue imposible guardar la configuracion";
-    for (int i = 0; i < empleados.size(); i++) {
-		archivoDB << empleados[i].getDocumento() << ";";
-		archivoDB <<0<<endl;
-	}
-}
 
 void DataBase::cargarUsuariosAdministracion() {
 	ifstream archivoDB;

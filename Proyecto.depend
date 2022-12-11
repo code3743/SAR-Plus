@@ -4,10 +4,10 @@
 	<string>
 	"UiConsola.h"
 
-1670783133 source:c:\users\jota5\desktop\proyecto\proyecto\src\database.cpp
+1670785539 source:c:\users\jota5\desktop\proyecto\proyecto\src\database.cpp
 	"DataBase.h"
 
-1670783823 c:\users\jota5\desktop\proyecto\proyecto\include\database.h
+1670785529 c:\users\jota5\desktop\proyecto\proyecto\include\database.h
 	<iostream>
 	<fstream>
 	<string>
@@ -16,7 +16,6 @@
 	"Usuario.h"
 	"Rol.h"
 	<vector>
-	<map>
 	"Empleado.h"
 
 1670587715 source:c:\users\jota5\desktop\proyecto\proyecto\src\persona.cpp

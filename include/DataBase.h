@@ -9,7 +9,6 @@
 #include "Usuario.h"
 #include "Rol.h"
 #include <vector>
-#include <map>
 #include "Empleado.h"
 
 using namespace std;
@@ -65,8 +64,6 @@ private:
 	string rutuaUsers = "./db/users.csv";
 	string rutaConfiguraciones = "./db/config.csv";
 	string rutaRoles = "./db/roles.csv";
-	string rutaRegistroHora = "./db/registro.csv";
-	string rutaNomina = "./nomina/nomina.csv";
 
 	ConfiguracionModelDB configuracionInicial;
 	vector<Rol> rolesDisponibles;

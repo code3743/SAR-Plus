@@ -1,7 +1,10 @@
 # SAR +
 ## Sofware de Administración de Restaurante
 
-Sistema que permite alojar infromacion persistente de los empleados, roles y usuarios administrativos
+**Universidad del Valle**
+
+
+Sistema que permite alojar información persistente de los empleados, roles y usuarios administrativos
 
 ### Funciones
 - Configuracion personalizable
