@@ -52,7 +52,6 @@
 		<Unit filename="include/PanelAdministrativo.h" />
 		<Unit filename="include/Persona.h" />
 		<Unit filename="include/Rol.h" />
-		<Unit filename="include/Roles.h" />
 		<Unit filename="include/UiConsola.h" />
 		<Unit filename="include/Usuario.h" />
 		<Unit filename="src/CheckConfig.cpp" />
@@ -67,7 +66,6 @@
 		<Unit filename="src/PanelAdministrativo.cpp" />
 		<Unit filename="src/Persona.cpp" />
 		<Unit filename="src/Rol.cpp" />
-		<Unit filename="src/Roles.cpp" />
 		<Unit filename="src/UiConsola.cpp" />
 		<Unit filename="src/Usuario.cpp" />
 		<Unit filename="src/configurarSistema.cpp" />
