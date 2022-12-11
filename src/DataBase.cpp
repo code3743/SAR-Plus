@@ -15,7 +15,7 @@ DataBase& DataBase::getInstancia() {
 void DataBase::setConfiguracionSistema(ConfiguracionModelDB config) {
 	ofstream archivoDB;
 	if (!establecerConexionDB(rutaConfiguraciones, archivoDB, DataBase::SobreEscribir)) throw "Fue imposible guardar la configuracion";
-	
+
 	archivoDB << config.getNombreNegocio() << ";";
 	archivoDB << config.getNIT() << ";";
 	archivoDB << config.getEstado() << endl;
@@ -31,7 +31,7 @@ ConfiguracionModelDB DataBase::getConfiguraciones() {
 bool DataBase::inicializarConfiguracion() {
 	ifstream archivoDB;
 	if (!establecerConexionDB(rutaConfiguraciones, archivoDB, DataBase::Leer))	throw "No se puede establecer conexion";
-	
+
 	string datosTemp;
 
 	string nombre, nit, estado;
@@ -62,7 +62,7 @@ void DataBase::cargarRoles() {
 		stringstream token(datosTemp);
 		getline(token, nombre, ';');
 		getline(token, baseSalario, ';');
-		
+
 		rolesDisponibles.push_back(Rol(nombre, stoi(baseSalario)));
 	}
 	cerrarConexionDB(archivoDB);
@@ -108,6 +108,15 @@ void DataBase::actualizarEmpleados(vector<Empleado> empleados) {
 	this->empleados = empleados;
 }
 
+void DataBase::initRegistroEmpleados(){
+    ofstream archivoDB;
+	if (!establecerConexionDB(rutaRegistroHora, archivoDB, DataBase::SobreEscribir)) throw "Fue imposible guardar la configuracion";
+    for (int i = 0; i < empleados.size(); i++) {
+		archivoDB << empleados[i].getDocumento() << ";";
+		archivoDB <<0<<endl;
+	}
+}
+
 void DataBase::cargarUsuariosAdministracion() {
 	ifstream archivoDB;
 	if (!establecerConexionDB(rutuaUsers, archivoDB, DataBase::Leer))	throw "No se puede establecer conexion";
@@ -128,6 +137,7 @@ void DataBase::cargarUsuariosAdministracion() {
 }
 
 void DataBase::actualizarRoles(vector<Rol> roles){
+    rolesDisponibles.clear();
 	ofstream archivoDB;
 	if (!establecerConexionDB(rutaRoles, archivoDB, DataBase::SobreEscribir)) throw "Fue imposible guardar la configuracion";
 	for (int i = 0; i < roles.size(); i++) {

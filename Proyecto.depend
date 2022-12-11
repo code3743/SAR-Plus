@@ -4,10 +4,10 @@
 	<string>
 	"UiConsola.h"
 
-1670769810 source:c:\users\jota5\desktop\proyecto\proyecto\src\database.cpp
+1670783133 source:c:\users\jota5\desktop\proyecto\proyecto\src\database.cpp
 	"DataBase.h"
 
-1670770048 c:\users\jota5\desktop\proyecto\proyecto\include\database.h
+1670783823 c:\users\jota5\desktop\proyecto\proyecto\include\database.h
 	<iostream>
 	<fstream>
 	<string>
@@ -16,19 +16,21 @@
 	"Usuario.h"
 	"Rol.h"
 	<vector>
+	<map>
 	"Empleado.h"
 
 1670587715 source:c:\users\jota5\desktop\proyecto\proyecto\src\persona.cpp
 	"Persona.h"
 
-1670673046 source:c:\users\jota5\desktop\proyecto\proyecto\src\login.cpp
+1670781566 source:c:\users\jota5\desktop\proyecto\proyecto\src\login.cpp
 	"Login.h"
 
-1670672986 c:\users\jota5\desktop\proyecto\proyecto\include\login.h
+1670775795 c:\users\jota5\desktop\proyecto\proyecto\include\login.h
 	<iostream>
 	"DataBase.h"
 	"UiConsola.h"
 	"PanelAdministrativo.h"
+	"MarcarIngreso.h"
 
 1670548883 source:c:\users\jota5\desktop\proyecto\proyecto\src\uiconsola.cpp
 	"UiConsola.h"
@@ -58,22 +60,24 @@
 	<iostream>
 	"Definiciones.h"
 
-1670540011 c:\users\jota5\desktop\proyecto\proyecto\include\definiciones.h
+1670775525 c:\users\jota5\desktop\proyecto\proyecto\include\definiciones.h
 	"DataBase.h"
 	"UiConsola.h"
 	"CheckConfig.h"
 	"Login.h"
 	"MarcarIngreso.h"
-	"Roles.h"
 
 1670590244 c:\users\jota5\desktop\proyecto\proyecto\include\checkconfig.h
 	"DataBase.h"
 	"UiConsola.h"
 	<iostream>
 
-1669741249 c:\users\jota5\desktop\proyecto\proyecto\include\marcaringreso.h
+1670778165 c:\users\jota5\desktop\proyecto\proyecto\include\marcaringreso.h
 	<iostream>
 	"DataBase.h"
+	<sys/time.h>
+	<ctime>
+	"Empleado.h"
 
 1670613975 source:c:\users\jota5\desktop\proyecto\proyecto\src\checkconfig.cpp
 	"CheckConfig.h"
@@ -92,7 +96,7 @@
 1670417342 c:\users\jota5\desktop\proyecto\proyecto\include\emplado.h
 	"Persona.h"
 
-1669755528 source:c:\users\jota5\desktop\proyecto\proyecto\src\marcaringreso.cpp
+1670783812 source:c:\users\jota5\desktop\proyecto\proyecto\src\marcaringreso.cpp
 	"MarcarIngreso.h"
 
 1669935021 source:c:\users\jota5\desktop\proyecto\proyecto\src\gerente.cpp
@@ -161,4 +165,10 @@
 	"GestionRoles.h"
 	"UiConsola.h"
 	"Usuario.h"
+
+1670781192 source:c:\users\jota5\desktop\proyecto\proyecto\src\registroentradasalida.cpp
+	"RegistroEntradaSalida.h"
+
+1670779135 c:\users\jota5\desktop\proyecto\proyecto\include\registroentradasalida.h
+	<iostream>
 

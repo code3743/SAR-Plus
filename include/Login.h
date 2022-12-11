@@ -4,6 +4,7 @@
 #include "DataBase.h"
 #include "UiConsola.h"
 #include "PanelAdministrativo.h"
+#include "MarcarIngreso.h"
 
 using namespace std;
 
@@ -20,6 +21,7 @@ private:
 	UiConsola& uiConsola = UiConsola::getIntancia();
 
 	PanelAdministrativo dashBoard;
+	MarcarIngreso marcacion;
 };
 
 #endif
