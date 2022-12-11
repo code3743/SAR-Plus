@@ -14,6 +14,7 @@ class GestionEmpleados {
 public:
 
 	void menuEmpleados();
+	~GestionEmpleados();
 
 protected:
 

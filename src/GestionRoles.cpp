@@ -40,6 +40,10 @@ void GestionRoles::menuRoles() {
 	}
 }
 
+GestionRoles::~GestionRoles() {
+	rolesDisponibles.clear();
+}
+
 void GestionRoles::crearRol() {
 	string nombreRol;
 	int baseSalarial;
@@ -48,8 +52,10 @@ void GestionRoles::crearRol() {
 	uiConsola.imprimirInfo("Crear Rol", UiConsola::CENTER);
 	uiConsola.leer(nombreRol, "Nombre de Rol: ", UiConsola::TAB);
 	uiConsola.leer(baseSalarial, "Base Salarial: ", UiConsola::TAB);
-	if (roles.crearRol(nombreRol, baseSalarial))
+	if (!existeRol(nombreRol)) {
+		rolesDisponibles.push_back(Rol(nombreRol, baseSalarial));
 		uiConsola.imprimirHecho("* Rol creado *", UiConsola::CENTER);
+	}
 	else uiConsola.imprimirError("* EL Rol ya existe *", UiConsola::CENTER);
 
 	Sleep(600);
@@ -57,8 +63,10 @@ void GestionRoles::crearRol() {
 void GestionRoles::listaRoles() {
 	uiConsola.borrarPantalla();
 	uiConsola.imprimirInfo("Roles", UiConsola::TAB);
-	if (roles.totalRoles() > 0) {
-		uiConsola.menuOpciones(roles.listadoRoles(), roles.totalRoles());
+	if (rolesDisponibles.size() > 0) {
+		for (int i = 0; i < rolesDisponibles.size(); i++) {
+			uiConsola.imprimir(to_string(i + 1) + ". " + rolesDisponibles[i].getNombreRol() + " - " + to_string(rolesDisponibles[i].getBaseSalarial()), UiConsola::TAB);
+		}
 		system("pause");
 	}
 	else {
@@ -68,12 +76,13 @@ void GestionRoles::listaRoles() {
 }
 
 void GestionRoles::setRoles(vector<Rol> roles) {
-	this->roles = Roles(roles);
+	rolesDisponibles.clear();
+	this->rolesDisponibles = roles;
 }
 
 vector<Rol> GestionRoles::getRoles() {
 
-	return roles.getRoles();
+	return rolesDisponibles;
 }
 
 void GestionRoles::editarRol() {
@@ -82,14 +91,20 @@ void GestionRoles::editarRol() {
 	int indexRol;
 	uiConsola.borrarPantalla();
 	uiConsola.imprimirInfo("Editar Roles", UiConsola::CENTER);
-	uiConsola.menuOpciones(roles.listadoRoles(), roles.totalRoles());
-	uiConsola.leer(indexRol, "Numero Rol: ", UiConsola::TAB);
-	if (indexRol > 0 && indexRol <= roles.totalRoles()) {
+	
+	for (int i = 0; i < rolesDisponibles.size(); i++) {
+		uiConsola.imprimir(to_string(i + 1) + ". " + rolesDisponibles[i].getNombreRol() + " - " + to_string(rolesDisponibles[i].getBaseSalarial()), UiConsola::TAB);
+	}
 
+	uiConsola.leer(indexRol, "Numero Rol: ", UiConsola::TAB);
+	if (indexRol > 0 && indexRol <= rolesDisponibles.size()) {
 		uiConsola.leer(nombreRol, "nuevo Nombre: ", UiConsola::TAB);
 		uiConsola.leer(baseSalarial, "nuevo Base Salarial: ", UiConsola::TAB);
-		if (roles.editarRol(indexRol - 1, nombreRol, baseSalarial))
+		if (!existeRol(nombreRol)) {
+			rolesDisponibles[indexRol - 1].setNombreRol(nombreRol);
+			rolesDisponibles[indexRol - 1].setBaseSalarial(baseSalarial);
 			uiConsola.imprimirHecho("* Rol editado *", UiConsola::CENTER);
+		}
 		else uiConsola.imprimirError("* Nombre de rol en uso *", UiConsola::CENTER);
 	}
 	else uiConsola.imprimirError("Rol no valido", UiConsola::CENTER);
@@ -100,20 +115,31 @@ void GestionRoles::eliminarRol() {
 	int indexRol;
 	uiConsola.borrarPantalla();
 	uiConsola.imprimirInfo("Eliminar Roles", UiConsola::CENTER);
-	uiConsola.menuOpciones(roles.listadoRoles(), roles.totalRoles());
+
+	for (int i = 0; i < rolesDisponibles.size(); i++) {
+		uiConsola.imprimir(to_string(i + 1) + ". " + rolesDisponibles[i].getNombreRol() + " - " + to_string(rolesDisponibles[i].getBaseSalarial()), UiConsola::TAB);
+	}
+
 	uiConsola.leer(indexRol, "Numero Rol: ", UiConsola::TAB);
-	if (indexRol > 0 && indexRol <= roles.totalRoles()) {
-		roles.eliminarRol(indexRol - 1);
+	if (indexRol > 0 && indexRol <= rolesDisponibles.size()) {
+		rolesDisponibles.erase(rolesDisponibles.begin() + (indexRol - 1));
 		uiConsola.imprimirHecho("* Rol eliminado *", UiConsola::CENTER);
 	}
 	else uiConsola.imprimirError("Rol no valido", UiConsola::CENTER);
 	Sleep(600);
 }
 
+bool GestionRoles::existeRol(string nombreRol) {
+	for (int i = 0; i < rolesDisponibles.size(); i++) {
+		if (rolesDisponibles[i].getNombreRol() == nombreRol) return true;
+	}
+	return false;
+}
+
 bool GestionRoles::finalizarConfigRoles() {
-	if (roles.totalRoles() > 0) {
-		for (int i = 0; i < roles.totalRoles(); i++) {
-			db.agregarRol(roles.getRoles()[i]);
+	if (rolesDisponibles.size()> 0) {
+		for (int i = 0; i < rolesDisponibles.size(); i++) {
+			db.agregarRol(rolesDisponibles[i]);
 		}
 		return true;
 	}

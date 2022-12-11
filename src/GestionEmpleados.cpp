@@ -26,9 +26,7 @@ void GestionEmpleados::menuEmpleados() {
 				eliminarEmpleado();
 				break;
 			case 5:
-				for (int i = 0; i < empleados.size(); i++) {
-					db.agreagarEmpleado(empleados[i]);
-				}
+				db.actualizarEmpleados(empleados);
 				uiConsola.borrarPantalla();
 				return;
 			default:
@@ -39,8 +37,12 @@ void GestionEmpleados::menuEmpleados() {
 		}
 	
 }
+GestionEmpleados::~GestionEmpleados() {
+	empleados.clear();
+}
 
 void GestionEmpleados::setEmpleados(vector<Empleado> empleados) {
+	this->empleados.clear();
 	this->empleados = empleados;
 }
 

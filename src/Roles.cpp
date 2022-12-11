@@ -36,16 +36,16 @@ vector<Rol> Roles::getRoles() {
 	return rolesDisponibles;
 }
 
-string* Roles::listadoRoles() {
-	const int length = rolesDisponibles.size() ;
-	string *roles;
-	roles = new string[length];
-	for (int i = 0; i < length; i++) {
-		roles[i] = rolesDisponibles[i].getNombreRol();
-	}
-	return roles;
-}
-
-int Roles::totalRoles() {
-	return rolesDisponibles.size();
-}
+//string* Roles::listadoRoles() {
+//	const int length = rolesDisponibles.size() ;
+//	string *roles;
+//	roles = new string[length];
+//	for (int i = 0; i < length; i++) {
+//		roles[i] = rolesDisponibles[i].getNombreRol();
+//	}
+//	return roles;
+//}
+//
+//int Roles::totalRoles() {
+//	return rolesDisponibles.size();
+//}

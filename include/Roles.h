@@ -11,10 +11,9 @@ class Roles
 public:
 	Roles();
 	Roles(vector<Rol>);
+
 	bool crearRol(string, int);
 	bool editarRol(int, string, int);
-	string* listadoRoles();
-	int totalRoles();
 	void eliminarRol(int);
 	vector<Rol> getRoles();
 

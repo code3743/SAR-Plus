@@ -55,7 +55,6 @@
 		<Unit filename="include/Roles.h" />
 		<Unit filename="include/UiConsola.h" />
 		<Unit filename="include/Usuario.h" />
-		<Unit filename="include/resource.h" />
 		<Unit filename="src/CheckConfig.cpp" />
 		<Unit filename="src/ConfiguracionModelDB.cpp" />
 		<Unit filename="src/DataBase.cpp" />

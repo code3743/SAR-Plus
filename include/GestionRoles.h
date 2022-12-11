@@ -2,30 +2,32 @@
 #define GESTIONROLES_H
 
 #include <iostream>
-#include "Roles.h"
 #include "UiConsola.h"
 #include "DataBase.h"
-
+#include "Rol.h"
+#include <vector>
 
 using namespace std;
 
 class GestionRoles {
 public:
 	void menuRoles();
+	~GestionRoles();
 	
 protected:
 	void setRoles(vector<Rol>);
-	vector<Rol> getRoles();
 	void crearRol();
 	void editarRol();
 	void eliminarRol();
+	vector<Rol> getRoles();
 	void listaRoles();
 	bool finalizarConfigRoles();
 	
 private:
 	UiConsola& uiConsola = UiConsola::getIntancia();
 	DataBase& db = DataBase::getInstancia();
-	Roles roles;
+	vector<Rol> rolesDisponibles;
+	bool existeRol(string);
 };
 
 

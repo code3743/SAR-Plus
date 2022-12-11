@@ -213,6 +213,7 @@ void PanelAdministrativo::menuGestionGerenciales() {
 void PanelAdministrativo::menuGestionEmpleados(){
 	string opciones[] = { "Crear Empleado","Lista Empleados", "Editar Empleado", "Atras" };
 	int opt;
+	
 	setEmpleados(db.listaEmpleados());
 	while (true) {
 		uiConsola.borrarPantalla();
@@ -220,7 +221,6 @@ void PanelAdministrativo::menuGestionEmpleados(){
 		uiConsola.espacio();
 		uiConsola.menuOpciones(opciones, 4);
 		uiConsola.leer(opt, "Opcion: ", UiConsola::TAB);
-
 		switch (opt)
 		{
 		case 1:

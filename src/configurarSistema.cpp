@@ -10,10 +10,10 @@ using namespace std;
 
 UiConsola& uiConsola = UiConsola::getIntancia();
 DataBase& db = DataBase::getInstancia();
-GestionRoles gestionRoles;
-GestionEmpleados gestionEmpleados;
 
 bool configurarSistema() {
+	GestionRoles gestionRoles;
+	GestionEmpleados gestionEmpleados;
 	ConfiguracionModelDB nuevaConfig;
 	string nombre, nit;
 	bool crearEmpleados;
@@ -38,6 +38,8 @@ bool configurarSistema() {
 		uiConsola.imprimirHecho("* Guardado exitosamente *", UiConsola::CENTER);
 		db.setConfiguracionSistema(nuevaConfig);
 		Sleep(400);
+		gestionEmpleados.~GestionEmpleados();
+		gestionRoles.~GestionRoles();
 		return true;
 	}
 	catch (const char* error) {

@@ -50,6 +50,7 @@ bool DataBase::inicializarConfiguracion() {
 }
 
 void DataBase::cargarRoles() {
+	rolesDisponibles.clear();
 	ifstream archivoDB;
 	if (!establecerConexionDB(rutaRoles, archivoDB, DataBase::Leer))	throw "No se puede establecer conexion";
 
@@ -70,8 +71,9 @@ void DataBase::cargarRoles() {
 
 
 void DataBase::cargarEmpleados() {
+	empleados.clear();
 	ifstream archivoDB;
-	if (!establecerConexionDB(rutaEmpleados, archivoDB, DataBase::Leer))	throw "No se puede establecer conexion";
+	if (!establecerConexionDB(rutaEmpleados, archivoDB, DataBase::Leer)) throw "No se puede establecer conexion";
 
 	string datosTemp;
 	string nombre, apellido, documento, telefono, rol, fecha;
@@ -102,6 +104,7 @@ void DataBase::actualizarEmpleados(vector<Empleado> empleados) {
 		archivoDB << empleados[i].getFechaVinculacion() << endl;
 	}
 	cerrarConexionDB(archivoDB);
+	this->empleados.clear();
 	this->empleados = empleados;
 }
 
